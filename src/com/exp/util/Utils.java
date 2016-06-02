@@ -35,7 +35,7 @@ public class Utils {
             obj = "null";
             break;
         case Cell.CELL_TYPE_NUMERIC:
-        	DecimalFormat df = new DecimalFormat("#.#########");
+        	DecimalFormat df = new DecimalFormat("#.#####");
         	obj = df.format(cell.getNumericCellValue()); 
             break; 
         }

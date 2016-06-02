@@ -44,7 +44,6 @@ public class Constants {
     public static final String FILE_ENCODING = "UTF-8";
     
     public static final String[] DB_DISHES_COMP_FIELDS = { "dishesCompId", "dishesCode",
-        "cCode", "foodName", "rawWeight", "proMethodId",
-        "proMethod", "netWeight", "yieldRate", "type",
+        "cCode", "rawWeight", "proMethodId", "netWeight", "yieldRate", "type",
         "priority", "createTime", "creatorId", "status", "remark" };
 }

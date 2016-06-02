@@ -35,7 +35,11 @@ public class ExprotSql {
 			ins = new FileInputStream(excelFile);
             Workbook workBook = WorkbookFactory.create(ins);
             int sheetCount = workBook.getNumberOfSheets();  			// Sheet的数量  
-            for(int i=0; i<sheetCount; i++) {							// 遍历所有的Sheet
+            for(int i=0; i<sheetCount; i++) {	
+            	// 遍历所有的Sheet
+            	if(i == 1) {
+            		System.out.println("2");
+            	}
             	Sheet sheet = workBook.getSheetAt(i);
             	System.out.println("Sheet Name: " + sheet.getSheetName());
                 int coordinateY = sheet.getLastRowNum();				// 得到最大Y坐标
@@ -127,7 +131,7 @@ public class ExprotSql {
      * 入口
      */
 	public static void main(String[] args) {
-		File file = new File("D:\\DRIS.xlsx");
+		File file = new File("D:\\菜品库.xlsx");
 		ExprotSql exp = new ExprotSql();
 		exp.readExcel(file);	//读取Excel数据
 		exp.createSql();		//创建sql语句
