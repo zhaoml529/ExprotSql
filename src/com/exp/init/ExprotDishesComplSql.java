@@ -73,7 +73,7 @@ public class ExprotDishesComplSql {
 	                        for (int x = 1; x < coordinateX; x++) {
 	                        	Cell cell = row.getCell(x);
 	                            if(cell != null){
-	                            	if(x == 3) {
+	                            	if(x == 3 || x == 6) {
 	                            		FormulaEvaluator evaluator = workBook.getCreationHelper().createFormulaEvaluator(); 
 	                            		CellValue cellValue = evaluator.evaluate(cell);
 	                            		tmpDataList.add("'"+String.valueOf(new Double(cellValue.getNumberValue()).intValue())+"'");
@@ -111,20 +111,20 @@ public class ExprotDishesComplSql {
                 begin.append("null," + dataList.get(1) + "," + dataList.get(2) + "," );
                 
                 sql.append(begin);
-                sql.append(dataList.get(4) + ",null," + dataList.get(6) + "," + dataList.get(7) + ",1,null,null,0,1,"+dataList.get(5)+");\n");
+                sql.append(dataList.get(4) + "," + dataList.get(5) + "," + dataList.get(6) + "," + dataList.get(7) + ",1,null,null,0,1,"+dataList.get(38)+");\n");
                 
                 if(!"null".equals(dataList.get(8))){	//第一个辅料为空，后面的辅料都不用添加了
                 	sql.append(begin);
-                	sql.append(dataList.get(9) + ",null," + dataList.get(11) + "," + dataList.get(12) + ",1,null,null,0,2,"+dataList.get(5)+");\n");
+                	sql.append(dataList.get(9) + "," + dataList.get(5) + "," + dataList.get(11) + "," + dataList.get(12) + ",1,null,null,0,2,"+dataList.get(38)+");\n");
                 	if(!"null".equals(dataList.get(13))){
                 		sql.append(begin);
-                		sql.append(dataList.get(14) + ",null," + dataList.get(16) + "," + dataList.get(17) + ",1,null,null,0,2,"+dataList.get(5)+");\n");
+                		sql.append(dataList.get(14) + "," + dataList.get(5) + "," + dataList.get(16) + "," + dataList.get(17) + ",1,null,null,0,2,"+dataList.get(38)+");\n");
                 		if(!"null".equals(dataList.get(18))){
                 			sql.append(begin);
-                			sql.append(dataList.get(19) + ",null," + dataList.get(21) + "," + dataList.get(22) + ",1,null,null,0,2,"+dataList.get(5)+");\n");
+                			sql.append(dataList.get(19) + "," + dataList.get(5) + "," + dataList.get(21) + "," + dataList.get(22) + ",1,null,null,0,2,"+dataList.get(38)+");\n");
                 			if(!"null".equals(dataList.get(23))){
                 				sql.append(begin);
-                				sql.append(dataList.get(24) + ",null," + dataList.get(26) + "," + dataList.get(27) + ",1,null,null,0,2,"+dataList.get(5)+");\n");
+                				sql.append(dataList.get(24) + "," + dataList.get(5) + "," + dataList.get(26) + "," + dataList.get(27) + ",1,null,null,0,2,"+dataList.get(38)+");\n");
                 			}
                 		}
                 	}
@@ -132,19 +132,19 @@ public class ExprotDishesComplSql {
                 
                 if(!"null".equals(dataList.get(28))){	//第一个调料为空，后面的调料都不用添加了
                 	sql.append(begin);
-                	sql.append(dataList.get(29) + ",null,null,null,3,null,null,0,1,"+dataList.get(5)+");\n");
+                	sql.append(dataList.get(29) + "," + dataList.get(5) + ",null,null,3,null,null,0,1,"+dataList.get(38)+");\n");
                 	if(!"null".equals(dataList.get(30))){
                 		sql.append(begin);
-                		sql.append(dataList.get(31) + ",null,null,null,3,null,null,0,1,"+dataList.get(5)+");\n");
+                		sql.append(dataList.get(31) + "," + dataList.get(5) + ",null,null,3,null,null,0,1,"+dataList.get(38)+");\n");
                 		if(!"null".equals(dataList.get(32))){
                 			sql.append(begin);
-                			sql.append(dataList.get(33) + ",null,null,null,3,null,null,0,1,"+dataList.get(5)+");\n");
+                			sql.append(dataList.get(33) + "," + dataList.get(5) + ",null,null,3,null,null,0,1,"+dataList.get(38)+");\n");
                 			if(!"null".equals(dataList.get(34))){
                 				sql.append(begin);
-                				sql.append(dataList.get(35) + ",null,null,null,3,null,null,0,1,"+dataList.get(5)+");\n");
+                				sql.append(dataList.get(35) + "," + dataList.get(5) + ",null,null,3,null,null,0,1,"+dataList.get(38)+");\n");
                 				if(!"null".equals(dataList.get(36))){
                 					sql.append(begin);
-                					sql.append(dataList.get(37) + ",null,null,null,3,null,null,0,1,"+dataList.get(5)+");\n");
+                					sql.append(dataList.get(37) + "," + dataList.get(5) + ",null,null,3,null,null,0,1,"+dataList.get(38)+");\n");
                 				}
                 			}
                 		}
