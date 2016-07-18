@@ -30,7 +30,7 @@ public class Constants {
     public static final String FILE_TYPE_LOG = ".log";
     
     // 默认导出路径
-    public static final String DEFAULT_EXPROT_DRICTORY = "D:\\DIRS";
+    public static final String DEFAULT_EXPROT_DRICTORY = "D:\\DIRS\\NEW";
     
     // 输出测试数据文件名
     public static final String EXPORT_FILE_NAME_DATA_SCRIPT = "Excel数据的Sql脚本";

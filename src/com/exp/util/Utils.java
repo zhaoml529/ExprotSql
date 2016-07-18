@@ -35,11 +35,12 @@ public class Utils {
             obj = "null";
             break;
         case Cell.CELL_TYPE_NUMERIC:
-        	DecimalFormat df = new DecimalFormat("#.#####");
+        	DecimalFormat df = new DecimalFormat("#.##");
         	obj = df.format(cell.getNumericCellValue()); 
             break; 
         }
-        return obj == null ? null : "null".equals(obj.toString()) ? obj.toString() : "'" + obj.toString() + "'";
+        return obj == null ? "null" : "".equals(obj.toString()) ? "null" : "null".equals(obj.toString()) ? obj.toString() : "'" + obj.toString() + "'";
+        // return obj == null ? null : "null".equals(obj.toString()) ? obj.toString() : "'" + obj.toString() + "'";
     }
     
     /**
