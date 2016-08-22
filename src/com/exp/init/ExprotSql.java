@@ -130,7 +130,7 @@ public class ExprotSql {
      * 入口
      */
 	public static void main(String[] args) {
-		File file = new File("D:\\新版菜品库\\DRIS.xlsx");
+		File file = new File("D:\\新版菜品库0803\\西安\\TB_TEMP.xlsx");
 		ExprotSql exp = new ExprotSql();
 		exp.readExcel(file);	//读取Excel数据
 		exp.createSql();		//创建sql语句

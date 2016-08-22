@@ -109,7 +109,7 @@ public class ExprotDishesComplSql {
                 begin.delete(begin.lastIndexOf(","), begin.lastIndexOf(",") + 1);
                 begin.append(") \nvalues(");
                 begin.append("null," + dataList.get(2) + ",");
-                
+                System.out.println(dataList.get(1)+" - "+dataList.get(2));
                 sql.append(begin);
                 sql.append(dataList.get(3) + "," + dataList.get(5) + "," + dataList.get(6) + "," + dataList.get(8) + "," + dataList.get(9) + ",1,"+ (i++) +",null,0,1,null);\n");
                 
@@ -157,7 +157,10 @@ public class ExprotDishesComplSql {
                 			}
                 		}
                 	}
-                	
+                }
+                if(!"null".equals(dataList.get(59)) && !"".equals(dataList.get(59))){	//食用油
+                	sql.append(begin);
+                	sql.append(dataList.get(59) + "," + dataList.get(61) + ",null,null,null,4,"+ (i++) +",null,0,1,null);\n");
                 }
             }
         }
@@ -184,7 +187,7 @@ public class ExprotDishesComplSql {
      * 入口
      */
 	public static void main(String[] args) {
-		File file = new File("D:\\新版菜品库\\菜品库原料清单(无公式).xlsx");
+		File file = new File("D:\\新版菜品库0803\\西安\\菜品库原料清单(无公式).xlsx");
 		ExprotDishesComplSql exp = new ExprotDishesComplSql();
 		exp.readExcel(file);	//读取Excel数据
 		exp.createSql();		//创建sql语句
